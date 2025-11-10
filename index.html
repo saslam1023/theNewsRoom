@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The NewsRoom — Viewer</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Stylesheets -->
+
+<link rel="stylesheet" href="css/styles.css">
+
+<!-- Scripts -->
+<script src="js/scripts.js" defer></script>
+
+</head>
+<body>
+
+<div class="top-nav">
+  <a href="editor.html" class="nav-link">✏️ Editor</a>
+  <span id="version" class="version">No newsletter loaded</span>
+
+      <label for="archiveSelect" class="visually-hidden">Load from Archive</label>
+      <select id="archiveSelect" title="Load from Archive" onchange="loadArchivedEdition(this.value)">
+  <option value="">📂 Load from Archive</option>
+</select>
+  <button id="prevBtn">⬅ Previous</button>
+  <button id="nextBtn">➡ Next</button>
+  
+<button id="printBtn" onclick="window.print()">🖨️ Print</button>
+
+
+</div>
+
+
+<div class="container" id="previewContainer">
+  <p>Select newsletter files from your computer to view them here.</p>
+</div>
+
+
+</body>
+</html>

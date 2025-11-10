@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The NewsRoom — Newsletter Editor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Stylesheets -->
+<link rel="stylesheet" href="css/editor-styles.css">
+
+<!-- Scripts -->
+<script src="js/editor-scripts.js" defer></script>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="top-nav">
+    <a href="/" class="nav-link button">📰 NewsRoom</a>
+
+  <button onclick="newFile()">🆕 New File</button>
+ 
+  <button onclick="saveEditionAsFile('html')">💾 Save</button>
+
+  <button onclick="document.getElementById('fileInput').click()">📂 Load Edition</button>
+  <button onclick="previewFile()">👁️ Preview</button>
+  <input id="fileInput" type="file" accept=".html,.json" onchange="loadEditionFromFile(event)" title="Select a file to load edition" placeholder="Choose file">
+
+  <select id="archiveSelect" title="Load from Archive" onchange="loadArchivedEdition(this.value)">
+  <option value="">📂 Load from Archive</option>
+</select>
+</div>
+
+<div class="print-ui">
+  <button onclick="window.print()">🖨️ Print</button>
+</div>
+
+<div class="container">
+  <article class="sheet" role="main">
+
+    <!-- Masthead -->
+    <header class="masthead">
+      <div>
+        <div class="title" contenteditable="true">Title of Newsletter</div>
+        <div class="strapline" contenteditable="true">A weekly round-up of school life, projects and community</div>
+      </div>
+      <div class="edition-meta" aria-hidden="true">
+        <span class="paper-name" contenteditable="true">Our Primary School</span>
+        <span contenteditable="true" class="edition">Issue 1</span><br>
+        <span contenteditable="true" class="date">Friday, 7 November 2025</span>
+      </div>
+    </header>
+
+    <div class="content-grid">
+      <div class="main-col" id="mainColumn">
+        <!-- Initial main article -->
+        <section class="card lead">
+          <button class="remove-btn" onclick="removeElement(this)">X Remove</button>
+          <div>
+            <h1 contenteditable="true">[Lead Article Title]</h1>
+            <div class="byline" contenteditable="true">By [Author Name]</div>
+            <div class="lede" contenteditable="true">[Lead paragraph placeholder]</div>
+            <div class="article dropcap rice" contenteditable="true"><p>[Main article content placeholder]</p></div>
+          </div>
+        </section>
+        <button class="add-btn" onclick="addImage()">+ Add Image</button>
+
+        <button class="add-btn" onclick="addMainArticle()">+ Add Article</button>
+      </div>
+
+      <aside class="side-col" id="sideColumn">
+        <div class="card-aside">
+          <button class="remove-btn" onclick="removeElement(this)">X Remove</button>
+          <h4 contenteditable="true">[Side Panel Title]</h4>
+          <div class="small" contenteditable="true">[Side panel content placeholder]</div>
+        </div>
+        <button class="add-btn" onclick="addSidePanel()">+ Add Panel</button>
+      </aside>
+    </div>
+
+    <footer class="folio">
+      <div contenteditable="true">Editor: [Editor Name] | Writers: [Writer Names] | Design by: [Designer Name]</div>
+      <div contenteditable="true">© Title of Newsletter | Our Primary School</div>
+    </footer>
+
+  </article>
+</div>
+
+
+<!-- Image Picker Modal -->
+<div id="imagePickerModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);justify-content:center;align-items:center;z-index:10000;">
+  <div style="background:#fff;padding:20px;border-radius:8px;max-width:600px;width:90%;max-height:80%;overflow:auto;position:relative;">
+    <button onclick="closeImagePicker()" style="position:absolute;top:10px;right:10px;padding:4px 8px;">✖ Close</button>
+    <h3>Select an Image</h3>
+    <div id="imagePickerGrid" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;"></div>
+  </div>
+</div>
+
+
+</body>
+</html>

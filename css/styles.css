@@ -1,0 +1,190 @@
+:root{
+  --paper-width:210mm;
+  --paper-height:297mm;
+  --gutter:18px;
+  --ink:#111;
+  --muted:#606060;
+  --accent:#8a2be2;
+  --page-bg:#f4f4f4;
+}
+html,body{height:100%;margin:0;background:var(--page-bg);-webkit-font-smoothing:antialiased;}
+.container{max-width:1050px;margin:28px auto;padding:18px;}
+.sheet{
+display: flex;
+flex-direction: column;
+margin: 0 auto;
+box-sizing:border-box;
+border:1px solid rgba(0,0,0,0.06);
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+padding:10mm;
+width:calc(var(--paper-width) - 44mm);
+min-height:calc(var(--paper-height) - 44mm);
+color:var(--ink);
+overflow:visible;
+background-color: #fff;
+}
+.masthead{
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+border-bottom:2px solid #111;
+padding-bottom:8px;
+margin-bottom:12px;
+margin-top: 20px;
+}
+.title{font-family:'Playfair Display',serif;font-size:44px;letter-spacing:1px;line-height:0.9;color:#0b0b0b;}
+.edition-meta{text-align:right;font-family:'Source Sans 3',sans-serif;color:var(--muted);font-size:12px;}
+.edition-meta .paper-name{font-weight:600;color:var(--accent);display:block}
+.strapline{font-family:'Merriweather',serif;font-style:italic;color:var(--muted);font-size:13px;margin-top:6px}
+.content-grid{display:grid;grid-template-columns: 2fr 1fr;gap:var(--gutter);margin-top:14px;}
+.main-col{display:flex;flex-direction:column;gap:7px;}
+h1 { margin: 0;padding-bottom: 0.5rem;}
+
+.lead{display:grid;grid-template-columns:1fr;gap:12px;align-items:start;}
+.lead .lead-image{width:100%;height:220px;background: linear-gradient(180deg,#ddd,#bbb);display:block;border-radius:6px;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+.lead h1{font-family:'Playfair Display',serif;font-size:28px;margin:0;line-height:1.05; }
+.lead .lede{font-family:'Merriweather',serif;font-size:15px;color:var(--muted);margin-bottom:8px}
+.byline{font-family:'Source Sans 3',sans-serif;color:var(--muted);font-size:12px;margin-bottom:6px}
+.article{column-count:2;column-gap:20px;font-family:'Merriweather',serif;font-size:10pt;line-height:1.5;text-align:left; }
+
+.article p{margin:0 0 10px 0;orphans:3;widows:3}
+.article .dropcap::first-letter{float:left;font-size:48px;line-height:38px;padding-right:8px;font-weight:700;font-family:'Playfair Display',serif;color:#111;}
+.pull-quote{margin:12px 0;padding:10px 12px;border-left:4px solid #222;font-family:'Source Sans 3',sans-serif;color:#222;background:#fafafa;column-span:all;font-weight:600;font-size:14px;}
+.figure{margin:0;break-inside:avoid; width: fit-content;}
+.figure img{width:100%;height:auto;display:block;border-radius:4px;}
+.caption{font-family:'Source Sans 3',sans-serif;font-size:12px;color:var(--muted);margin-top:6px;text-align:center;}
+.side-col{display:flex;flex-direction:column;gap:12px;}
+.card{border-bottom:1px solid gray;break-inside:avoid; padding-bottom:0.5rem; }
+.card-aside{padding:10px;break-inside:avoid;background-color:#f3eeee;}
+.card-aside h4{margin:0 0 8px 0;font-family:'Source Sans 3',sans-serif;color:#111;font-weight:600;font-size:14px;border-bottom:1px solid gray;}
+.small{font-size:13px;color:var(--muted);font-family:'Source Sans 3',sans-serif}
+.box-list{display:flex;flex-direction:column;gap:8px;}
+.weather{display:flex;align-items:center;gap:10px}
+.weather .icon{width:56px;height:56px;border-radius:8px;background:linear-gradient(180deg,#ffd36d,#ffb74d);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+.weather .info{font-family:'Source Sans 3',sans-serif}
+.puzzle pre{white-space:pre-wrap;font-family:'Source Sans 3',sans-serif}
+.folio{display:flex;justify-content:space-between;align-items:center;margin-top:auto;border-top:1px solid rgba(0,0,0,0.05);padding-top:10px;font-family:'Source Sans 3',sans-serif;color:var(--muted);font-size:12px}
+.hrule{height:0px;background:rgba(0,0,0,0.08);margin:0}
+[contenteditable]{outline:none !important;padding:0;}
+.remove-btn, .add-btn, .print-ui, .resizer {display:none !important;}
+#printBtn{position:fixed;top:14px;right:14px;background:#222;color:#fff;border:none;border-radius:6px;padding:6px 12px;cursor:pointer;font-family:'Source Sans 3',sans-serif;z-index:1000;}
+
+/* Navigation Bar */
+/* TOP NAV BAR */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  z-index: 10000;
+  font-family: "Source Sans 3", sans-serif;
+
+}
+.top-nav button, .top-nav select {
+  background: #8a2be2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.nav-link { text-decoration: none; color:#ffb74d;border-radius: 6px;
+  padding: 6px 12px; font-weight: bolder;}
+
+.version {
+  align-self: center;
+  font-weight: bold;
+}
+
+
+
+@media print {
+  /* Hide everything except the newsletter content */
+  body * {
+    visibility: hidden !important;
+  }
+
+  .container, #previewContainer, main { padding:0; margin:0;}
+
+  .sheet, .sheet * {
+    visibility: visible !important;
+  }
+
+  .main-col { background-color: yellow; width:120mm; }
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* instead of absolute */
+    margin: 0 auto;     /* keep the container margin */
+    width: calc(var(--paper-width) - 44mm); /* keep original width */
+    padding: 0mm;      /* preserve original padding */
+    border: 0;
+    box-shadow: none;
+    background: white;
+    min-height: calc(var(--paper-height) - 15mm);
+  }
+
+  /* Hide UI and background */
+  #printBtn, .print-ui, .top-nav, .add-btn, .remove-btn, .resizer {
+    display: none !important;
+  }
+
+  html, body {
+    background: var(--page-bg) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+  /* Preserve layout grid for content */
+  .content-grid {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: var(--gutter) !important;
+  }
+
+  .article {
+    column-count: 2 !important;
+    column-gap: 20px !important;
+    break-inside: avoid;
+  }
+
+
+  .card, .figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Remove padding for empty side panels in print */
+  .card-aside  {
+    margin: 0 0 0 0px !important;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  
+  }
+
+  .lead .lead-image {
+    height: 160px;
+  }
+
+  .card .lead { margin: 0; padding:0;}
+
+
+  .folio {
+    margin-top: auto;
+    padding-top: 5px;    
+  }
+
+  .edition-meta .paper-name {color:black;}
+}
+
+.visually-hidden {display: none;}
