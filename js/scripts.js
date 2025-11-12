@@ -37,9 +37,18 @@ async function displayNewsletter(index){
 
   const res = await fetch(newsletters[index].filename);
   const html = await res.text();
-  document.getElementById('previewContainer').innerHTML = html;
+  const container = document.getElementById('previewContainer');
+  container.innerHTML = html;
   document.getElementById('version').textContent = newsletters[index].title;
+
+  // Remove any empty .lede elements anywhere inside the container
+  requestAnimationFrame(() => {
+    container.querySelectorAll('.lede').forEach(lede => {
+      if(!lede.textContent.trim()) lede.remove();
+    });
+  });
 }
+
 
 
 document.getElementById('nextBtn').addEventListener('click',()=>displayNewsletter(currentIndex+1));

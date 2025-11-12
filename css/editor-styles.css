@@ -93,7 +93,7 @@
 html,body{height:100%;margin:0;background:var(--page-bg);-webkit-font-smoothing:antialiased;}
 .print-ui{position:fixed;right:0;top:18px;z-index:9999}
 .print-ui button{background:#222;color:#fff;border:none;padding:4px 8px;border-radius:8px;cursor:pointer;font-family:"Source Sans 3",sans-serif}
-.container{max-width:1050px;margin-left:28px; margin-right:28px; margin-bottom:28px;margin-top: 60px;padding:18px;}
+.container{max-width:1050px;margin-left:auto; margin-right:auto; margin-bottom:28px;margin-top: 60px;padding:18px; }
 .sheet{
   margin: 0 auto;
   box-sizing:border-box;
