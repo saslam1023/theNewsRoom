@@ -1,0 +1,56 @@
+@media print {
+  @page {
+    size: A4;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: white !important;
+  }
+
+  .container { border:5px solid black;}
+  /* Hide UI only */
+  #printBtn, .print-ui, .top-nav, .add-btn, .remove-btn, .resizer, #editorBtn {
+    display: none !important;
+  }
+
+  /* Ensure printable content remains visible */
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    padding:0;
+    width: 100%;
+    min-height: 100%;
+    box-shadow: none;
+    border: 1px solid green;
+    background: white;
+  }
+
+  .main-col { width: 120mm; border: 1px solid red; }
+
+  .article {
+    column-count: 2;
+    column-gap: 20px;
+    border: 1px solid blue;
+    background-color: yellow;
+  }
+
+  .card, .figure {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .card-aside {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+
+  .folio {
+    margin-top: auto;
+    padding-top: 5px;
+  }
+}

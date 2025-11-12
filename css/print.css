@@ -1,0 +1,61 @@
+:root{
+  --paper-width:210mm;
+  --paper-height:297mm;
+  --print-margin-x:60mm;
+  --print-margin-y:20mm;
+  --gutter:28px;
+  --ink:#111;
+  --muted:#606060;
+  --accent:#8a2be2;
+  --page-bg:none;
+}
+
+@media print {
+  /* Hide everything except the newsletter content */
+  body * {
+    visibility: hidden !important;
+  }
+
+  .container, #previewContainer, main { padding:0; margin:0; }
+
+  .sheet, .sheet * {
+    visibility: visible !important;
+  }
+
+
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* instead of absolute */
+    margin: auto;     /* keep the container margin */
+    width: calc(var(--paper-width) - (var(--print-margin-x))); 
+    padding: 0mm;  /*remove padding   */ 
+    box-shadow: none;
+    border: 0;
+    background: white;
+    min-height: calc(var(--paper-height) - (var(--print-margin-y)));  
+  }
+
+  /* Hide UI and background */
+  #printBtn, .print-ui, .top-nav, .add-btn, .remove-btn, .resizer {
+    display: none !important;
+  }
+
+  html, body {
+    background: var(--page-bg) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+  }
+
+
+  .folio {
+    margin-top: auto;
+    padding-top: 5px; 
+  }
+
+  .edition-meta .paper-name {color:black;}
+}
+
+
+.visually-hidden {display: none;}
